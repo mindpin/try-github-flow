@@ -3,11 +3,14 @@ Rails.application.routes.draw do
   get "/lf" => "li_fei#index"
 
   get "/zjb" => "jian_bin#index"
+
+  get "/szq" => "szq_shan#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # root 'szq_shan#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
