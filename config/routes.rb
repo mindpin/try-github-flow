@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
   get "/lf" => "li_fei#index"
+
+  get "/zjb" => "jian_bin#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
