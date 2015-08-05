@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "/zjb" => "jian_bin#index"
 
   get "/szq" => "szq_shan#index"
+  get "/sessions/new" => "sessions#new"
+  post"/sessions/create"=> "sessions#create"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
