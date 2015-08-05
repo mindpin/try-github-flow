@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   get "/szq" => "szq_shan#index"
 
+  get "/sessions/new" => "szq_page#new"
+
+  post "/sessions/create" => "szq_page#create"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -32,7 +36,7 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-get '/libochao'=> "lbc#show"
+  get '/libochao'=> "lbc#show"
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
