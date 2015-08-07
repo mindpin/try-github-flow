@@ -10,6 +10,11 @@ Rails.application.routes.draw do
 
   post "/sessions/create" => "szq_page#create"
 
+  get "/szqadminadduser/new" => "szq_admin_adduser#new"
+
+  post "/szqadminadduser/create" => "szq_admin_adduser#create"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

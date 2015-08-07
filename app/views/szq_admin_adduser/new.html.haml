@@ -1,0 +1,17 @@
+#szqadminadduser
+  =form_tag "/szqadminadduser/create" do
+    %h2{style: 'height:25px;line-height:25px; border:1px solid #0066CC; background-color:#0066FF;padding-left:50%;' } Add User
+    %div{align:'center'}
+      %label 身份证:
+      =text_field_tag 'cardId'
+      %br
+      %label 姓名:
+      =text_field_tag 'name'
+      %br
+      %label 电话:
+      =text_field_tag 'tel'
+      %br
+      %label 地址:
+      =text_field_tag 'address'
+      %br
+      =submit_tag 'Submmit' 
