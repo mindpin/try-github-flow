@@ -3,5 +3,4 @@ class User
   include Mongoid::Timestamps
   field :is_vip,type: Boolean
   has_many :orders
-
 end

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  controller :sessions do
+    get  'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
   get "/lf" => "li_fei#index"
 
   get "/zjb" => "jian_bin#index"
@@ -12,8 +18,16 @@ Rails.application.routes.draw do
 
   get "/szqadminadduser/new" => "szq_admin_adduser#new"
 
-  post "/szqadminadduser/create" => "szq_admin_adduser#create"
+  post "/szqadminadduser/create" => "szq_admin_adduser#create" 
 
+  get "/szqadminadduser/update" => "szq_admin_adduser#update" 
+
+  # get "/szqadminadduser/update" => "szq_admin_adduser#update" 
+
+  
+
+
+  # post "/szqadminadduser/update" => "szq_admin_adduser#update"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

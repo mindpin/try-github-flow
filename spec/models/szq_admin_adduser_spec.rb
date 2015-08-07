@@ -1,17 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe SzqAdminAdduser, type: :model do
-  describe "the signin process", :type => :feature do
-    it "signs me in" do
+  describe "verification information", :type => :feature do
+    it "verification cardId and name" do
       visit '/szqadminadduser/new'
       within("#szqadminadduser") do      
         fill_in 'cardId', :with => 123456789987654321
         fill_in 'name', :with => 'jack'
-        fill_in 'tel', :with => 13869996896
-        fill_in 'address', :with => '北京市海淀区知春路锦秋国际B座904'
+        fill_in 'tel', :with => 12345678912
+        fill_in 'address', :with => 'city peking'
       end
-      click_button 'Submmit'
-      expect(page).to have_content 'Success'
+      click_button 'Submit'
+      expect(page).to have_content "create user successfully"
     end
   end
 end
