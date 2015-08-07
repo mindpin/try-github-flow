@@ -1,0 +1,13 @@
+%h1 录入信息
+-if !@identification.nil?
+  -if @identification.errors.any?
+    -@identification.errors.full_messages.each do |message|
+      =message
+
+#session 
+  =form_tag "/identification/supply" do
+    %p 地址
+    =text_field_tag 'ADDRESS'
+    %p 电话号码
+    =text_field_tag 'PHONENUMBER'
+    =submit_tag 'Submit'
