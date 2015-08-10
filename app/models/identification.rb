@@ -10,8 +10,8 @@ class Identification
   validates :phonenumber, 
   format: { with: NUMBER_FORMAT, 
     :message => '手机号码必须是11位数字'},allow_nil: true
-  validates :address,length: { minimum: 10, maximum: 50 },
-                     if: Proc.new { |m| !m.address.blank?}
+  validates :address,length: { minimum: 10, maximum: 50 },allow_nil: true
+                     # if: Proc.new { |m| !m.address.blank?}
 
   # if: Proc.new { |m| !m.address.blank?}附属加逗号
   validates :identical_id,
