@@ -1,0 +1,12 @@
+- if @identification.errors.any?
+  - @identification.errors.full_messages.each do |message|
+    = message
+
+#session 
+  = form_tag "/identification/create" do
+    %p name
+    = text_field_tag 'name'
+    %p identical_id
+    = text_field_tag 'identical_id'
+    = submit_tag 'Submit'
+

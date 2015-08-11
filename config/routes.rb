@@ -6,6 +6,16 @@ Rails.application.routes.draw do
 
   get "/szq" => "szq_shan#index"
 
+  get "/sessions/new" => "sessions#new"
+  post"/sessions/create"=> "sessions#create"
+  
+  get "/identification/new"=>"identification#new"
+  post "/identification/create"=>"identification#create"
+  resources :identification
+  get "supply"=>"identification#supply"
+  post "/identification/supply"=>"identification#supply"
+  post "/identification/supply_success"=>"identification#supply_success"
+  get "supply_success"=>"identification#supply_success"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
