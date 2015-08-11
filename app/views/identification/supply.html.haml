@@ -7,8 +7,8 @@
 #session 
   = form_tag "/identification/supply_success" do
     %p 地址
-    = text_field_tag 'ADDRESS'
+    = text_field_tag 'address'
     %p 电话号码
-    = text_field_tag 'PHONENUMBER'
-    = hidden_field_tag 'ID', @id
+    = text_field_tag 'phonenumber'
+    = hidden_field_tag 'id', @id
     = submit_tag 'Submit'

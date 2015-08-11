@@ -4,8 +4,8 @@ class IdentificationController < ApplicationController
   end
 
   def create
-    @name = params[:NAME]
-    @identical_id = params[:IDENTICAL_ID]
+    @name = params[:name]
+    @identical_id = params[:identical_id]
     @identification = Identification.new(:name=>@name,:identical_id=>@identical_id)
 
     if @identification.save
@@ -34,9 +34,9 @@ class IdentificationController < ApplicationController
    end
 
    def supply_success
-    @id = params[:ID]
-    @address = params[:ADDRESS]
-    @phonenumber = params[:PHONENUMBER]
+    @id = params[:id]
+    @address = params[:address]
+    @phonenumber = params[:phonenumber]
     if @id.blank?
       return render :supply_success
     end
@@ -47,6 +47,4 @@ class IdentificationController < ApplicationController
       redirect_to supply_path, notice: '补充失败'
     end
    end
-
-
 end

@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   get "/zjb" => "jian_bin#index"
 
   get "/szq" => "szq_shan#index"
+
   get "/sessions/new" => "sessions#new"
   post"/sessions/create"=> "sessions#create"
-
-
-
+  
   get "/identification/new"=>"identification#new"
   post "/identification/create"=>"identification#create"
+  resources :identification
   get "supply"=>"identification#supply"
   post "/identification/supply"=>"identification#supply"
   post "/identification/supply_success"=>"identification#supply_success"
