@@ -1,0 +1,21 @@
+- if !@szq_admin_added_user.nil?
+  - if @szq_admin_added_user.errors.any?
+    - @szq_admin_added_user.errors.full_messages.each do |message|
+      = message
+
+
+#szqadminadduser
+  = form_tag "/szq_admin_adduser/show" do
+    %h2{style: 'height:25px;line-height:25px; border:1px solid #0066CC; background-color:#0066FF;padding-left:50%;' } Add User Tel and Address
+    %span create cardId and name successfully
+    %div{align:'center'}
+      %br
+      = hidden_field_tag 'cardId', @cardId
+      %br
+      %label 电话:
+      = text_field_tag 'tel'
+      %br
+      %label 地址:
+      = text_field_tag 'address'
+      %br
+      = submit_tag 'Submit' 

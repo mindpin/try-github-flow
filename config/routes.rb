@@ -16,18 +16,18 @@ Rails.application.routes.draw do
 
   post "/sessions/create" => "szq_page#create"
 
-  get "/szqadminadduser/new" => "szq_admin_adduser#new"
+  resources :szq_admin_adduser do
+    member do
+      get "success"
+    end
+  end
 
-  post "/szqadminadduser/create" => "szq_admin_adduser#create" 
+  post "/szq_admin_adduser/create" => "szq_admin_adduser#create"
 
-  get "/szqadminadduser/update" => "szq_admin_adduser#update" 
+  post "/szq_admin_adduser/update" => "szq_admin_adduser#update"
 
-  # get "/szqadminadduser/update" => "szq_admin_adduser#update" 
+  post "/szq_admin_adduser/show" => "szq_admin_adduser#show"
 
-  
-
-
-  # post "/szqadminadduser/update" => "szq_admin_adduser#update"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,17 +1,18 @@
+- if @szq_admin_added_user.errors.any?
+  - @szq_admin_added_user.errors.full_messages.each do |message|
+    = message
+
+
 #szqadminadduser
-  =form_tag "/szqadminadduser/create" do
-    %h2{style: 'height:25px;line-height:25px; border:1px solid #0066CC; background-color:#0066FF;padding-left:50%;' } Add User
+  =form_tag "/szq_admin_adduser/create" do
+    %h2{style: 'height:25px;line-height:25px; border:1px solid #0066CC; background-color:#0066FF;padding-left:50%;' } Add User Id and Name
+
     %div{align:'center'}
       %label 身份证:
-      =text_field_tag 'cardId'
+      = text_field_tag 'cardId'
       %br
       %label 姓名:
-      =text_field_tag 'name'
+      = text_field_tag 'name'
       %br
-      %label 电话:
-      =text_field_tag 'tel'
-      %br
-      %label 地址:
-      =text_field_tag 'address'
-      %br
-      =submit_tag 'Submit' 
+      
+      = submit_tag 'Submit'
