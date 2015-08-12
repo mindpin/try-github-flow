@@ -1,0 +1,17 @@
+- if !@szq_admin_add_user.nil?
+  - if @szq_admin_add_user.errors.any?
+    - @szq_admin_add_user.errors.full_messages.each do |message|
+      = message
+
+#szqadminadduser
+  %h2 Add User Tel and Address
+  %span create cardId and name successfully
+  = form_for @szq_admin_add_user do |f|
+    .field
+      %label 电话:
+      = f.text_field 'tel'
+    .field
+      %label 地址:
+      = f.text_field 'address'
+    .field
+      = f.submit 'Submit'

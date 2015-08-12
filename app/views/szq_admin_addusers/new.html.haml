@@ -1,0 +1,16 @@
+- if @szq_admin_added_user.errors.any?
+  - @szq_admin_added_user.errors.full_messages.each do |message|
+    = message
+
+
+#szqadminadduser
+  %h2 Add User Id and Name
+  = form_for @szq_admin_added_user do |f|
+    .field
+      %label 身份证:
+      = f.text_field 'card_id'
+    .field
+      %label 姓名:
+      = f.text_field 'name'
+    .field
+      = f.submit 'Submit'

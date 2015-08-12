@@ -1,18 +1,17 @@
 class SzqAdminAdduser
   include Mongoid::Document
   include Mongoid::Timestamps
-  field :cardId,type: Integer
+  field :card_id,type: String
   field :name,type: String
-  field :tel,type: Integer
+  field :tel,type: String
   field :address,type: String
 
-  validates :cardId, :name,  presence: true
+  validates :card_id, :name,  presence: true
   validates :name, length: 2..4
-  validates :cardId, 
-            :format => {with: %r{\d{18}}, message: 'ID number format is wrong'}, 
+  validates :card_id,
+            :format => { with: %r{\d{18}} },
             uniqueness: true
-  validates :tel, :format => { 
-            with: %r{\d{11}}, message: 'telephone format is wrong'},
+  validates :tel, :format => { with: %r{\d{11}} },
             if: Proc.new { |m| !m.tel.blank?}
 
   validates :address, length: 10..50,
