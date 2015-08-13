@@ -11,6 +11,10 @@ RSpec.configure do |config|
     end
   end
 
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.clean_with(:truncation)

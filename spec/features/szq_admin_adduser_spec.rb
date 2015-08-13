@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe "verification information", :type => :feature do
   it "成功创建" do
     @card_id = "123654987478596423"
@@ -7,6 +9,7 @@ describe "verification information", :type => :feature do
 
     visit '/szq_admin_addusers/new'
     within("#szqadminadduser") do
+      # szq_admin_adduser[card_id]  form_for表单中的默认方式
       fill_in 'szq_admin_adduser[card_id]', :with => @card_id
       fill_in 'szq_admin_adduser[name]', :with => @name
     end

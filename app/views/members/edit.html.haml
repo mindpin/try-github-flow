@@ -1,0 +1,16 @@
+#member
+  %h2 insert into member
+  =form_for @member do |f|
+    .field
+      %label card_id:
+      = f.text_field :card_id
+    .field
+      %label name:
+      = f.text_field :name
+    .field
+      %label phone_num:
+      = f.text_field :phone_num
+    .field
+      = f.submit 'Submit'
+    .field
+      = link_to 'Back', members_path 
