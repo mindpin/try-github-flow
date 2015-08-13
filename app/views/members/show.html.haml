@@ -1,12 +1,4 @@
-= form_for @member do |f|
-  .field
-    %label card_id:
-    = f.label @member.card_id
-  .field
-    %label name:
-    = f.label @member.name
-  .field
-    %label phone_num:
-    = f.label @member.phone_num
-  .field
-    = link_to 'Back', members_path 
+.card_id= @member.card_id
+.name= @member.name
+.phone_num= @member.phone_num
+.back= link_to 'Back', members_path
