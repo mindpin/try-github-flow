@@ -1,0 +1,10 @@
+#company
+  %ul
+    - @company.each do |company| 
+      %li.company
+        = company.company_name
+        = company.company_address
+        = link_to "Detail", company
+        = link_to "Edit", edit_company_path(company)
+        = link_to "Destroy", company, method: :delete
+  = link_to "New Company", new_company_path

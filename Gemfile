@@ -52,3 +52,7 @@ group :test do
 end
 
 gem 'haml'
+
+gem 'simple_form'
+
+gem 'country_select'

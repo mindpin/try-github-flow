@@ -1,0 +1,5 @@
+%h2 Company Detail
+.company_name= @company.company_name
+.company_address= @company.company_address
+.link= link_to "New Employee", "/companies/#{@company.id}/employees/new"
+.link= link_to "Back", companies_path 
