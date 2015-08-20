@@ -7,4 +7,9 @@
     .field
       = f.input :phone_num
     .field
+      = f.association :teams, label_method: :team_name, as: :check_boxes
+    .field
+      = f.association :company, as: :hidden
+    .field
       = f.button :submit
+= link_to "back", "/companies/#{@company.id}"

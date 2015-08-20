@@ -1,5 +1,12 @@
 %h2 Company Detail
-.company_name= @company.company_name
-.company_address= @company.company_address
+%label 公司名称：
+= @company.company_name
+%br
+%label 公司地址：
+= @company.company_address
+%br
+%label 团队：
+= @company.employees
+.link= link_to "New Team", "/companies/#{@company.id}/teams/new"
 .link= link_to "New Employee", "/companies/#{@company.id}/employees/new"
 .link= link_to "Back", companies_path 

@@ -6,7 +6,7 @@ class Employee
   field :phone_num, type: String
 
   belongs_to :company
-  has_and_belongs_to_many :team
+  has_and_belongs_to_many :teams
 
   # 姓名 长度必须大于 2 小于 4
   # 身份证号 必须是 18 位字符串

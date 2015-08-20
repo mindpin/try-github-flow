@@ -8,4 +8,5 @@
         = link_to "Show", "/companies/#{@company.id}/employees/#{em.id}"
         = link_to "Edit", "/companies/#{@company.id}/employees/#{em.id}/edit"
         = link_to "Destroy", "/companies/#{@company.id}/employees/#{em.id}", method: :delete
+.link= link_to "New Employee", "/companies/#{@company.id}/employees/new"
 = link_to "Home", "/companies"

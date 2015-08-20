@@ -1,0 +1,10 @@
+#team
+  %ul
+    - @team.each do |t|
+      %li.team
+        = t.team_name
+        = link_to "Edit", "/companies/#{@company.id}/teams/#{t.id}/edit"
+        = link_to "Show", "/companies/#{@company.id}/teams/#{t.id}"
+        = link_to "Destroy", "/companies/#{@company.id}/teams/#{t.id}", method: :delete
+.link= link_to "New Team", "/companies/#{@company.id}/teams/new"
+= link_to "Home", "/companies"

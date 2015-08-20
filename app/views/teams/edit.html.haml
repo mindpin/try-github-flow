@@ -1,0 +1,7 @@
+#team
+  = simple_form_for [@company, @team] do |t|
+    .field
+      = t.input :team_name
+    .field
+      = t.button :submit
+=link_to "Back", "/companies/#{params[:company_id]}/teams"

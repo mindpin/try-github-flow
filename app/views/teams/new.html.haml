@@ -1,0 +1,11 @@
+#team
+  = simple_form_for [@company, @team] do |t|
+    .field
+      = t.input :team_name
+    .filed
+      = t.association :employees, label_method: :employee_name, as: :check_boxes
+    .field
+      = t.association :company, as: :hidden
+    .field
+      = t.button :submit
+  = link_to "back", "/companies/#{@company.id}"
