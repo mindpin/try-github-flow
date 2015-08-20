@@ -16,8 +16,6 @@ class EmployeesController <ApplicationController
     @phone_num = params[:employee][:phone_num]
     @team_ids = params[:employee][:team_ids]
     @company_id = params[:company_id]
-    p "111111111111111111111111111111111111111111111111"
-    p @company_id
     @employee = Employee.create(employee_name: @employee_name, card_id: @card_id, phone_num: @phone_num, team_ids: @team_ids, company_id: @company_id)
     if @employee.save
       redirect_to "/companies/#{params[:company_id]}/employees"
