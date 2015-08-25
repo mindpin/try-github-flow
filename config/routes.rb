@@ -1,10 +1,33 @@
 Rails.application.routes.draw do
 
+  controller :sessions do
+    get  'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
   get "/lf" => "li_fei#index"
 
   get "/zjb" => "jian_bin#index"
 
   get "/szq" => "szq_shan#index"
+
+  get "/sessions/new" => "szq_page#new"
+
+  post "/sessions/create" => "szq_page#create"
+
+  resources :szq_admin_addusers do
+    member do
+      get "success"
+    end
+  end
+
+  resources :members
+
+  resources :companies do
+    resources :teams
+    resources :employees
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -32,7 +55,7 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-get '/libochao'=> "lbc#show"
+  get '/libochao'=> "lbc#show"
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

@@ -1,0 +1,5 @@
+.employee= @employee.employee_name
+.employee= @employee.card_id
+.employee= @employee.phone_num
+- @employee.team_ids.each do |t|
+  = Team.find(t).team_name

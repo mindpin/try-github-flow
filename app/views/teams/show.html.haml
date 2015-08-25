@@ -1,0 +1,7 @@
+%label 团队：
+= @team.team_name
+%br
+%label 成员：
+- @team.employee_ids.each do |t|
+  = Employee.find(t).employee_name
+.link= link_to "Back", "/companies/#{@company.id}/teams"

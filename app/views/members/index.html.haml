@@ -1,0 +1,19 @@
+#member
+  %table
+    %thead
+      %tr
+        %th name
+        %th card_id
+        %th phone_num
+        %th
+    %tbody
+      - @member.each do |member|
+        %tr.name
+          %td= member.name
+          %td= member.card_id
+          %td= member.phone_num
+          %td 
+            = link_to 'Show', member
+            = link_to 'Edit', edit_member_path(member)
+            = link_to 'Destroy', member, method: :delete, date: {confirm: 'Are you sure'}
+= link_to 'New Member', new_member_path

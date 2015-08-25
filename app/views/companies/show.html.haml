@@ -1,0 +1,18 @@
+%h2 Company Detail
+%label 公司名称：
+= @company.company_name
+%br
+%label 公司地址：
+= @company.company_address
+%br
+%label 团队：
+- @company.teams.each do |t|
+  = Team.find(t).team_name
+%br
+%label 成员：
+- @company.employees.each do |e|
+  = Employee.find(e).employee_name
+
+.link= link_to "New Team", "/companies/#{@company.id}/teams/new"
+.link= link_to "New Employee", "/companies/#{@company.id}/employees/new"
+.link= link_to "Back", companies_path 

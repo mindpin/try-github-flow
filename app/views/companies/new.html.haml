@@ -1,0 +1,11 @@
+#company
+  %h2 Create Company
+  = simple_form_for @company do |f|
+    .field
+      = f.input :company_name
+    .field
+      = f.input :company_address
+    .field
+      = f.button :submit
+    .field
+      = link_to "Home", companies_path
